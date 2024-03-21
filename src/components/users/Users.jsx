@@ -9,9 +9,9 @@ const [usersData,setUsersData]  =useState([])
 const {sender,room} =useParams()
 const navigate = useNavigate()
 
-
+const uri = process.env.REACT_APP_BACKEND
 const getUsers = async()=>{
-  const response = await axios.get('http://localhost:5000/users/getAll')
+  const response = await axios.get(uri)
   setUsersData(response.data)
   }
   
