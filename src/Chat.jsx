@@ -100,7 +100,7 @@ const handleMessage = (newMessage) => {
       <div className='messageInput '>
        
         <input
-        className='messageIn'
+        className='messageIn col-8 mx-2 col-md-7'
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}

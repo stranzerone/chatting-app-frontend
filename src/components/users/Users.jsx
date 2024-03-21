@@ -4,21 +4,27 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 
-export default function Users({socket}) {
+export default function Users({}) {
 const [usersData,setUsersData]  =useState([])
 const {sender,room} =useParams()
 const navigate = useNavigate()
+const ROOOM = useParams().room
 
 const uri = process.env.REACT_APP_BACKEND
+
 const getUsers = async()=>{
-  const response = await axios.get(uri)
+try{
+  const response = await axios.post(uri,{room:ROOOM,name:"sahil"})
   setUsersData(response.data)
+}catch(error){
+  console.error(error)
+}
+
+ 
   }
   
 
-  socket.on("users_joined", (data)=>{
-    getUsers();
-     });
+
     
 
 useEffect(()=>{

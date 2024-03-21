@@ -66,7 +66,7 @@ export default function Chat({socket}) {
       <div className='messageInput'>
         <input
 
-          className='messageIn'
+          className='messageIn  col-8 mx-2 col-md-5'
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
